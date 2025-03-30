@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -141,7 +141,7 @@ namespace Tarea22
 					if (paciente.requiereDiagnostico) { 
 						paciente.Estado = Estado.EN_ESPERA_DIAGNOSTICO;
 						}
-					CentroMedico.TrazaCambioEstado(paciente, prioridad);
+					//CentroMedico.TrazaCambioEstado(paciente, prioridad);
 					break;
 				}
 			}
@@ -194,7 +194,7 @@ namespace Tarea22
 				{
 					equipo.disponible = true;
 					paciente.Estado = Estado.FINALIZADO;
-					CentroMedico.TrazaCambioEstado(paciente, prioridad);
+					//CentroMedico.TrazaCambioEstado(paciente, prioridad);
 					break;
 				}
 			}
@@ -240,6 +240,7 @@ namespace Tarea22
 	public class CentroMedico
 	{
 		public bool bloqueo = false;
+		public bool semaforoPaciente = true;
 		private int MAX_Pacientes = 20;
 		private int nMedicos = 1;
 		private int nEquiposDiagnosticos = 1;
@@ -283,8 +284,9 @@ namespace Tarea22
 				if (LMedicos.Where(x => x.disponible).Count() > 0)
 				{
 					//Hay médicos disponibles
-					if (!bloqueo && LPacientes.Where(x => x.paciente.Estado == Estado.EN_ESPERA_CONSULTA).Count() > 0)
+					if (!bloqueo && semaforoPaciente && LPacientes.Where(x => x.paciente.Estado == Estado.EN_ESPERA_CONSULTA).Count() > 0)
 					{
+						semaforoPaciente = false;	
 						//Hay pacientes esperando
 						Medico medicoCita = LMedicos.Where(x => x.disponible).FirstOrDefault();
 						PacientePrioridad pacientePrioridad = LPacientes.Where(x => x.paciente.Estado == Estado.EN_ESPERA_CONSULTA).OrderBy(x => x.paciente.LlegadaHospital).FirstOrDefault();
@@ -302,11 +304,14 @@ namespace Tarea22
 								ConsultaDiagnostica citaDiagnostica = new ConsultaDiagnostica(LConsultas.Count() + 1, equipocita, pacientePrioridad.paciente, TimeSpan.FromSeconds(pacientePrioridad.paciente.TiempoDiagnostico), pacientePrioridad.prioridad);
 								LConsultasDiagnostica.Add(citaDiagnostica);
 								TrazaCambioEstado(pacientePrioridad.paciente, pacientePrioridad.prioridad);
+								while (pacientePrioridad.paciente.Estado == Estado.EN_DIGNOSTICO) { }
+								TrazaCambioEstado(pacientePrioridad.paciente, pacientePrioridad.prioridad);
 							}
 
 
 						}
-						
+						semaforoPaciente = true;
+
 					}
 				}
 
@@ -350,9 +355,10 @@ namespace Tarea22
 		/// <param name="prioridad"></param>
 		public static void TrazaCambioEstado(Paciente paciente, Prioridad prioridad)
 		{
-			string traza = String.Format("Paciente {0}. Llegado el {1} con prioridad {2}.Rquiere diagnóstico: {3} Estado: {4}. Duración consulta: {5} segundos. Tiempo transcurrido: {6} segundos", paciente.Id, paciente.LlegadaHospital, prioridad.ToString(), paciente.requiereDiagnostico ? "Sí" : "No", paciente.Estado.ToString(), paciente.TiempoConsulta, (int)medicion.ElapsedMilliseconds / 1000);
+			string traza = String.Format("Paciente {0}. Llegado el {1} con prioridad {2}.Requiere diagnóstico: {3}. Estado: {4}. Duración consulta: {5} segundos. Tiempo transcurrido: {6} segundos", paciente.Id, paciente.LlegadaHospital, prioridad.ToString(), paciente.requiereDiagnostico ? "Sí" : "No", paciente.Estado.ToString(), paciente.TiempoConsulta, (int)medicion.ElapsedMilliseconds / 1000);
 			Console.WriteLine(traza);
 		}
 
 	}
 }
+
