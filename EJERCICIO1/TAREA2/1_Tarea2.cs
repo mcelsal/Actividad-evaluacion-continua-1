@@ -49,7 +49,7 @@ namespace Tarea12
 			medicion.Start();
 			for (int i = 0; i < N_PACIENTES; i++)
 			{
-				CM.LlegadaPaciente(new Paciente(rnd.Next(1,100), (int)medicion.ElapsedMilliseconds/1000, rnd.Next(5, 15)), (Prioridad)rnd.Next(0, 2));
+				CM.LlegadaPaciente(new Paciente(rnd.Next(1,100), (int)medicion.ElapsedMilliseconds/1000, rnd.Next(5, 15)), (Prioridad)rnd.Next(0, 3));
 				Task.Delay(2000).Wait();
 			}
 			medicion.Stop();
