@@ -1,33 +1,27 @@
 # **Actividad-evaluacion-continua-1**
-**GESTIÓN ATENCIÓN HOSPITALARIA**
+**🏥 GESTIÓN ATENCIÓN HOSPITALARIA 🩺**
 
-## PREGUNTAS: Ejercicio #2 – Unidades de diagnóstico – Tarea #2
+## 🧠 PREGUNTAS: Ejercicio #2 – Unidades de diagnóstico – Tarea #2
 
 ### ❓ Explica la solución planteada en tu código y porqué las has escogido.
-    
-        Descripción General
-            El sistema implementado en el código simula la gestión de un centro médico, donde los pacientes se atienden en función de su **prioridad médica** y su **estado**. 
-            El sistema maneja consultas médicas y diagnósticas, asignando recursos (médicos y equipos de diagnóstico) de manera eficiente, siguiendo las prioridades de los pacientes. 
-            Esta solución utiliza hilos (`Thread`) para simular la concurrencia en el proceso de atención médica y diagnóstico, permitiendo un manejo paralelo de las consultas y diagnósticos.
-        
+          
         📌 **Estructura del Sistema:**
             El sistema se divide en varias clases que gestionan distintas entidades y procesos dentro del centro médico:
             
               - **Entidades Principales**:
                   - **Medico**: Representa a un médico en el centro médico.
                   - **EquioDiagnostico**: Representa a un equipo de diagnóstico, similar a la clase de los médicos.
-                  - **Paciente**: Representa a un paciente que llega al centro médico, con propiedades como el tiempo de consulta y si necesita diagnóstico.
-                  - **Consulta** y **ConsultaDiagnostica**: Representan las consultas médicas y de diagnóstico que se realizan, respectivamente. 
+                  - **Paciente**: Representa a un paciente que llega al centro médico, con propiedades como el tiempo de consulta y si                             necesita diagnóstico.
+                  - **Consulta** y **ConsultaDiagnostica**: Representan las consultas médicas y de diagnóstico que se realizan,                                     respectivamente. 
                     Ambas clases gestionan un hilo que simula el tiempo de consulta y diagnóstico.
-
               - **Proceso del Centro Médico**:
-                 - **CentroMedico**: Es la clase central que gestiona la llegada de pacientes, la asignación de médicos y equipos de diagnóstico, y la simulación del flujo de trabajo en el centro médico. 
+                 - **CentroMedico**: Es la clase central que gestiona la llegada de pacientes, la asignación de médicos y equipos de                              diagnóstico, y la simulación del flujo de trabajo en el centro médico. 
                    Controla la 0disponibilidad de los recursos (médicos y equipos de diagnóstico) y el estado de los pacientes.
    
-            La estructura de clases está diseñada para separar las responsabilidades de cada entidad. Por ejemplo, los médicos y equipos de diagnóstico son responsables de su propia disponibilidad, 
+            La estructura de clases está diseñada para separar las responsabilidades de cada entidad. Por ejemplo, los médicos y equipos de                diagnóstico son responsables de su propia disponibilidad, 
             mientras que el centro médico se encarga de gestionar las consultas y diagnósticos de manera eficiente.
             
-        📌 **Uso de Concurrencia:**
+        🔄 **Uso de Concurrencia:**
 
              - Uno de los principales retos en este tipo de simulación es manejar las tareas concurrentes, como la asignación de médicos a pacientes y la realización de consultas. Para esto, 
                se utilizan **hilos** (`Thread`), lo que permite simular que las consultas y diagnósticos se realizan de manera independiente y no bloquean el resto del sistema.
@@ -36,7 +30,7 @@
 
              - El **semaforo** (`semaforoPaciente`) es utilizado para evitar que los pacientes se gestionen simultáneamente en la misma instancia, asegurando que cada paciente se gestione correctamente en su turno.
 
-        📌 **Prioridades de Pacientes:**
+        💭 **Prioridades de Pacientes:**
 
              - Se implementa un sistema de **prioridades** para gestionar la urgencia con la que se deben atender los pacientes. Hay tres niveles de prioridad: `EMERGENCIAS_N1`, `URGENCIAS_N2`, y `CONSULTAS_GNERALES_N3`.                  Los pacientes con mayor prioridad (como los de emergencia) se atienden primero, mientras que los pacientes con menor prioridad deben esperar su turno.
 
@@ -54,7 +48,7 @@
 
              - Al finalizar cada uno de estos procesos, se cambia el estado del paciente, de modo que se pueda hacer un seguimiento de su progreso desde la consulta hasta el diagnóstico y finalmente su finalización.
 
-        📌 **Decisiones Tomadas:**
+        🤔 **Decisiones Tomadas:**
 
              - **Uso de hilos para simular la concurrencia**: La simulación de múltiples pacientes siendo atendidos al mismo tiempo es una característica fundamental de este sistema, por lo que el uso de hilos fue       
                esencial para simular este comportamiento.
@@ -73,7 +67,7 @@
     El enfoque alternativo que planteo consiste en la asignación de recursos, tales como médicos y equipos de diagnóstico, mediante el uso de **colas de prioridad**. 
     En lugar de utilizar la llegada del paciente como criterio único para asignar médicos y equipos, los pacientes pidrían ser atendidos en función de su **prioridad médica**, y en segundo lugar por su **tiempo de             llegada**. Esto garantizaría que los pacientes más urgentes fuesen atendidos primero, sin tener que esperar a que se libere un médico o un equipo de diagnóstico disponible.
 
-    ✅- Cambios Propuestos y Esquema de Funcionamiento:
+    🔄- Cambios Propuestos y Esquema de Funcionamiento:
 
         1. **Uso de Colas de Prioridad**:
            En lugar de gestionar manualmente las prioridades de los pacientes dentro de una lista y asignar recursos de manera secuencial, podríamos usar un sistema de colas prioritarias para gestionar los pacientes en               espera, que permiten que los pacientes con mayor prioridad sean atendidos antes que los de menor prioridad sin necesidad de ordenar constantemente la lista de pacientes. 
@@ -100,7 +94,7 @@
         - **Mayor control sobre el proceso**: Este modelo permite simular escenarios más complejos y agregar reglas adicionales para gestionar el flujo de pacientes de manera aún más eficiente (por ejemplo, priorización 
           de pacientes por múltiples criterios, eventos inesperados, etc.).
      
-    ✅- Implementación
+    🛠 - Implementación
 
         Para implementar esta solución, se necesitarían cambios en el código para introducir las **colas de prioridad**. A continuación, se presentan algunos fragmentos clave de código que ilustran cómo se podría                  implementar esta mejora:
 
@@ -116,10 +110,8 @@
         
             Los pacientes cambiarán de estado según el progreso de su atención, y el sistema los mantendrá informados de su estado sin necesidad de esperar innecesariamente.     
         
-      📌- Conclusión
+      💡- Conclusión
          La implementación de un sistema de colas de prioridad para gestionar la atención de los pacientes por urgencia podrían optimizar o simplificar el sistema dependiendo de los objetivos y requerimientos del centro            médico, asegurando que los pacientes más críticos reciban atención primero. Además, optimiza el uso de los recursos médicos y de diagnóstico, lo que mejora la capacidad de respuesta del sistema ante situaciones 
          de alta demanda.
 
-
-
-           
+         
