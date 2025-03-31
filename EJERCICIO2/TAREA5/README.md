@@ -1,3 +1,18 @@
+ 📌 ⚙️ 💡 💭 📋 🔄
+
+         ✅ 🧠 ✔️ 🧾 🔍 🛠
+
+            ****🏥 GESTIÓN ATENCIÓN HOSPITALARIA 🩺****
+
+
+# **Actividad-evaluacion-continua-1**
+**🏥 GESTIÓN ATENCIÓN HOSPITALARIA 🩺**
+
+## 🧠 Ejercicio #2 – Prioridades de los pacientes – Tarea #4
+
+### ❓ Explica el planteamiento de tu código y plantea otra posibilidad de solución a la que has programado y porqué has escogido la tuya.
+
+
 # Actividad-evaluacion-continua-1
 GESTIÓN ATENCIÓN HOSPITALARIA
 
