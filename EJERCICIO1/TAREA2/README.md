@@ -2,7 +2,7 @@
 **GESTIÓN ATENCIÓN HOSPITALARIA**
 
 
-## PREGUNTAS: Ejercicio #1 – Consulta médica – Tarea #2
+## PREGUNTAS: Ejercicio #1 – Pacientes con datos – Tarea #2
 
 ### ❓ ¿Cuál de los pacientes sale primero de consulta? Explica tu respuesta.
       El paciente que sale primero de consulta es aquel cuya **duración de consulta (`TiempoConsulta`) sea menor**.
