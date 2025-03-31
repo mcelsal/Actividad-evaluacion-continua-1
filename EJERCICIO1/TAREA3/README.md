@@ -1,11 +1,11 @@
 # **Actividad-evaluacion-continua-1**
-**GESTIÓN ATENCIÓN HOSPITALARIA**
+**🏥 GESTIÓN ATENCIÓN HOSPITALARIA 🩺**
 
 
-## PREGUNTAS: Ejercicio #1 – Visualización del avance – Tarea #3
+## 🧠 PREGUNTAS: Ejercicio #1 – Visualización del avance – Tarea #3
 
 ### ❓ ¿Has decidido visualizar información adicional a la planteada en el ejercicio? ¿Por qué? Plantea qué otra información podría ser útil visualizar.
-      Sí, he decidido visualizar información adicional para mejorar la comprensión del proceso de atención en el centro médico.  
+      💭 Sí, he decidido visualizar información adicional para mejorar la comprensión del proceso de atención en el centro médico.  
       El programa originalmente muestra información sobre:  
           - **Llegada de pacientes** con su prioridad y tiempo estimado de consulta.  
           - **Inicio y fin de consultas**.  
