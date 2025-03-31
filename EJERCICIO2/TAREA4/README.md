@@ -2,11 +2,11 @@
 
          ✅ 🧠 ✔️ 🧾 🔍
 
-            **🏥 GESTIÓN ATENCIÓN HOSPITALARIA 🩺**
+            ****🏥 GESTIÓN ATENCIÓN HOSPITALARIA 🩺****
 
 
-# Actividad-evaluacion-continua-1
-GESTIÓN ATENCIÓN HOSPITALARIA
+# **Actividad-evaluacion-continua-1**
+**🏥 GESTIÓN ATENCIÓN HOSPITALARIA 🩺**
 
 
 ##PREGUNTAS: Ejercicio #1 – Consulta médica – Tarea #1
