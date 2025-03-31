@@ -1,5 +1,19 @@
-# Actividad-evaluacion-continua-1
-GESTIÓN ATENCIÓN HOSPITALARIA
+📌 ⚙️ 💡 💭 📋 🔄 📊 🤔
+
+         ✅ 🧠 ✔️ 🧾 🔍 🛠
+
+            ****🏥 GESTIÓN ATENCIÓN HOSPITALARIA 🩺****
+
+
+# **Actividad-evaluacion-continua-1**
+**🏥 GESTIÓN ATENCIÓN HOSPITALARIA 🩺**
+
+## 🧠 PREGUNTAS: Ejercicio #2 – Estadísticas y logs – Tarea #5
+
+### ❓ ¿Puedes explicar tu código y porque has decidido hacerlo así? 
+
+
+
 
 
 ##PREGUNTAS: Ejercicio #1 – Consulta médica – Tarea #1
