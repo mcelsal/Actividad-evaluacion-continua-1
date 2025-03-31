@@ -1,7 +1,7 @@
 # **Actividad-evaluacion-continua-1**
 **🏥 GESTIÓN ATENCIÓN HOSPITALARIA 🩺**
 
-## 🧠 Ejercicio #2 – Prioridades de los pacientes – Tarea #4
+## 🧠 PREGUNTAS: Ejercicio #2 – Prioridades de los pacientes – Tarea #4
 
 ### ❓ Explica el planteamiento de tu código y plantea otra posibilidad de solución a la que has programado y porqué has escogido la tuya.
 
@@ -42,8 +42,7 @@
              - Permite **control directo sobre los hilos** (ideal para simulaciones educativas).
              - Se ajusta al objetivo del proyecto: una simulación realista pero controlada del flujo de atención médica.
          
-         El uso de `.OrderBy(x => x.prioridad)` y el control manual del ciclo permiten tener una lógica clara y personalizable, sin depender de estructuras avanzadas que podrían ocultar parte del           comportamiento interno.
-
+         El uso de `.OrderBy(x => x.prioridad)` y el control manual del ciclo permiten tener una lógica clara y personalizable, sin depender de         estructuras avanzadas que podrían ocultar parte del           comportamiento interno.
 
       💭 Conclusión:
 
