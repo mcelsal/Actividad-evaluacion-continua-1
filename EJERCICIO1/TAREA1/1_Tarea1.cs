@@ -48,7 +48,7 @@ namespace Tarea11
 			Random rnd = new Random();
 			for (int i = 0;i < N_PACIENTES; i++)
 			{
-				CM.LlegadaPaciente(new Paciente(i + 1, i + 1, DuracionConsulta),(Prioridad)rnd.Next(0,4));
+				CM.LlegadaPaciente(new Paciente(i + 1, i + 1, DuracionConsulta),(Prioridad)rnd.Next(0,3));
 				Task.Delay(2000).Wait();
 			}
 
