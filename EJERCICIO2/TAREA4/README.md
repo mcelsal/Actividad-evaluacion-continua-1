@@ -1,6 +1,6 @@
- 📌 ⚙️ 💡 💭 📋
+ 📌 ⚙️ 💡 💭 📋 🔄
 
-         ✅ 🧠 ✔️ 🧾 🔍
+         ✅ 🧠 ✔️ 🧾 🔍 🛠
 
             ****🏥 GESTIÓN ATENCIÓN HOSPITALARIA 🩺****
 
@@ -8,48 +8,50 @@
 # **Actividad-evaluacion-continua-1**
 **🏥 GESTIÓN ATENCIÓN HOSPITALARIA 🩺**
 
+## 🧠 Ejercicio #2 – Prioridades de los pacientes – Tarea #4
 
-##PREGUNTAS: Ejercicio #1 – Consulta médica – Tarea #1
+### ❓ Explica el planteamiento de tu código y plantea otra posibilidad de solución a la que has programado y porqué has escogido la tuya.
 
-###¿Cuántos hilos se están ejecutando en este programa? Explica tu respuesta. 
+    📌 Enfoque actual implementado:
 
-###¿Cuál de los pacientes entra primero en consulta? Explica tu respuesta.
+        ✔️ El sistema simula el funcionamiento de un centro médico mediante programación concurrente en C# con `Threads` y `Task.Delay`. La lógica principal se basa en:
 
-###¿Cuál de los pacientes sale primero de consulta? Explica tu respuesta.
+              - **Simulación de pacientes** que llegan con distinta prioridad (`EMERGENCIAS_N1`, `URGENCIAS_N2`, `CONSULTAS_GENERALES_N3`) y necesidades (con o sin diagnóstico posterior).
+              - **Gestión de recursos limitados**: médicos y equipos diagnósticos.
+              - **Asignación por prioridad**: se atiende primero al paciente con mayor urgencia.
+              - **Modelo multihilo**: se utilizan `Threads` para representar de forma paralela las consultas y diagnósticos.
 
-##PREGUNTAS: Ejercicio #1 – Pacientes con datos – Tarea #2
+            La clase `CentroMedico` gestiona el proceso general, en un hilo principal que revisa constantemente si hay recursos disponibles y pacientes en espera, priorizando a quienes tengan                  mayor urgencia. Las clases `Consulta` y `ConsultaDiagnostica` encapsulan la lógica de cada atención, simulando la duración de cada proceso mediante la comparación de tiempos.
 
-###¿Cuál de los pacientes sale primero de consulta? Explica tu respuesta.
+            El sistema registra mediante trazas en consola el paso de los pacientes por los distintos estados: espera, consulta, diagnóstico y finalización.
 
-##PREGUNTAS: Ejercicio #1 – Visualización del avance– Tarea #3
+     💡 Una alternativa al enfoque actual sería:
+         
+         🛠 Usar una **cola de prioridad** (como `PriorityQueue` o `SortedList`) en lugar de ordenar manualmente con `.OrderBy(...)` en cada ciclo.
 
-###¿Has decidido visualizar información adicional a la planteada en el ejercicio? ¿Por qué? Plantea qué otra información podría ser útil visualizar.
+             ✅ Ventajas:
+                 - Mayor eficiencia al evitar ordenamientos repetitivos.
+                 - Modelo de atención más fiel a estructuras reales de gestión de colas.
+                 - Posible implementación más clara del comportamiento FIFO dentro de la misma prioridad.
 
-##PREGUNTAS: Ejercicio #2 – Unidades de diagnóstico – Tarea #1
+     🔄 Otra posibilidad: utilizar `async/await` con `Task` en lugar de `Thread`:
 
-###¿Los pacientes que deben esperar para hacerse las pruebas diagnostico entran luego a hacerse las pruebas por orden de llegada? Explica que tipo de pruebas has realizado para comprobar este comportamiento. 
+             ✅ Ventajas:
+                 - Mejor escalabilidad y gestión de recursos (los `Task` son más ligeros que los `Thread`).
+                 - Permite una mayor flexibilidad y más control sobre la ejecución asíncrona.
+                 - Facilita la implementación de cancelaciones, timeouts y pruebas unitarias.
 
-##PREGUNTAS: Ejercicio #2 – Unidades de diagnóstico – Tarea #2
+     ⚙️ ¿Por qué se eligió este enfoque?
 
-###Explica la solución planteada en tu código y porqué las has escogido.
-###Plantea otra posibilidad de solución a la que has programado.
-
-##PREGUNTAS: Ejercicio #2 – Más pacientes – Tarea #3
-
-###Explica el planteamiento de tu código y plantea otra posibilidad de solución a la que has programado y porqué has escogido la tuya.
-###¿Los pacientes que deben esperar entran luego a la consulta por orden de llegada? Explica que tipo de pruebas has realizado para comprobar este comportamiento. 
-
-##PREGUNTAS: Ejercicio #2 – Prioridades de los pacientes – Tarea #4
-###Explica el planteamiento de tu código y plantea otra posibilidad de solución a la que has programado y porqué has escogido la tuya.
-
-##PREGUNTAS: Ejercicio #2 – Estadísticas y logs – Tarea #5
-###¿Puedes explicar tu código y porque has decidido hacerlo así? 
-
-##PREGUNTAS: Ejercicio #3 – Pacientes infinitos – Tarea #1
-###Tarea 1, ¿cumple requisitos? [Pruebas] [Explicación]
-
-###Tarea 2, ¿qué comportamientos no previstos detectas? [Pruebas] [Explicación]
-
-###Tarea 3, ¿Cómo adaptarías tu solución? [Explicación]
+         Se optó por un modelo basado en `Thread` porque:
+         
+             - Es **más didáctico** para entender la ejecución paralela sin abstracciones.
+             - Permite **control directo sobre los hilos** (ideal para simulaciones educativas).
+             - Se ajusta al objetivo del proyecto: una simulación realista pero controlada del flujo de atención médica.
+         
+         El uso de `.OrderBy(x => x.prioridad)` y el control manual del ciclo permiten tener una lógica clara y personalizable, sin depender de estructuras avanzadas que podrían ocultar parte del           comportamiento interno.
 
 
+      💭 Conclusión:
+
+         El sistema implementado logra simular de forma efectiva el comportamiento de un centro médico con pacientes de distinta prioridad, gestionando recursos y tiempos de espera. La elección             del enfoque basado en `Thread` y ordenación manual ofrece claridad y control, aunque podrían explorarse mejoras en eficiencia o modernización del código usando estructuras y patrones más           avanzados.
