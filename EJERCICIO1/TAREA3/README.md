@@ -1,48 +1,37 @@
-# Actividad-evaluacion-continua-1
-GESTIÓN ATENCIÓN HOSPITALARIA
+# **Actividad-evaluacion-continua-1**
+**GESTIÓN ATENCIÓN HOSPITALARIA**
 
 
-##PREGUNTAS: Ejercicio #1 – Consulta médica – Tarea #1
+## PREGUNTAS: Ejercicio #1 – Visualización del avance – Tarea #3
 
-###¿Cuántos hilos se están ejecutando en este programa? Explica tu respuesta. 
+### ❓ ¿Has decidido visualizar información adicional a la planteada en el ejercicio? ¿Por qué? Plantea qué otra información podría ser útil visualizar.
+      Sí, se ha decidido visualizar información adicional para mejorar la comprensión del proceso de atención en el centro médico.  
+      El programa originalmente muestra información sobre:  
+          - **Llegada de pacientes** con su prioridad y tiempo estimado de consulta.  
+          - **Inicio y fin de consultas**.  
+          - **Estados de los pacientes** a lo largo del proceso.  
 
-###¿Cuál de los pacientes entra primero en consulta? Explica tu respuesta.
+      Sin embargo, visualizar **más detalles** permite analizar mejor el comportamiento del sistema.
 
-###¿Cuál de los pacientes sale primero de consulta? Explica tu respuesta.
+      📌 Podría ser útil visualizar, para mejorar el análisis del sistema, los siguientes datos adicionales:
 
-##PREGUNTAS: Ejercicio #1 – Pacientes con datos – Tarea #2
+          1. **Tiempo de espera de cada paciente** antes de entrar a consulta.  
+             - Actualmente, no se muestra cuánto tiempo un paciente espera antes de ser atendido.  
+             - Se podría calcular restando el tiempo de llegada del paciente al tiempo en que comienza su consulta.
 
-###¿Cuál de los pacientes sale primero de consulta? Explica tu respuesta.
+          2. **Cantidad de pacientes atendidos por cada médico**.  
+             - Permitiría analizar la carga de trabajo de cada doctor.  
 
-##PREGUNTAS: Ejercicio #1 – Visualización del avance– Tarea #3
+          3. **Tiempo total en que el centro médico estuvo operando**.  
+              - Para evaluar la eficiencia del sistema.  
 
-###¿Has decidido visualizar información adicional a la planteada en el ejercicio? ¿Por qué? Plantea qué otra información podría ser útil visualizar.
+          4. **Promedio de duración de consultas** según la prioridad de los pacientes.  
+              - Para identificar si las **emergencias** realmente están teniendo tiempos de atención más cortos.  
 
-##PREGUNTAS: Ejercicio #2 – Unidades de diagnóstico – Tarea #1
+          5. **Lista de pacientes que quedaron sin atender** cuando el sistema cierra.  
+              - Para evaluar si el número de médicos es suficiente.  
 
-###¿Los pacientes que deben esperar para hacerse las pruebas diagnostico entran luego a hacerse las pruebas por orden de llegada? Explica que tipo de pruebas has realizado para comprobar este comportamiento. 
-
-##PREGUNTAS: Ejercicio #2 – Unidades de diagnóstico – Tarea #2
-
-###Explica la solución planteada en tu código y porqué las has escogido.
-###Plantea otra posibilidad de solución a la que has programado.
-
-##PREGUNTAS: Ejercicio #2 – Más pacientes – Tarea #3
-
-###Explica el planteamiento de tu código y plantea otra posibilidad de solución a la que has programado y porqué has escogido la tuya.
-###¿Los pacientes que deben esperar entran luego a la consulta por orden de llegada? Explica que tipo de pruebas has realizado para comprobar este comportamiento. 
-
-##PREGUNTAS: Ejercicio #2 – Prioridades de los pacientes – Tarea #4
-###Explica el planteamiento de tu código y plantea otra posibilidad de solución a la que has programado y porqué has escogido la tuya.
-
-##PREGUNTAS: Ejercicio #2 – Estadísticas y logs – Tarea #5
-###¿Puedes explicar tu código y porque has decidido hacerlo así? 
-
-##PREGUNTAS: Ejercicio #3 – Pacientes infinitos – Tarea #1
-###Tarea 1, ¿cumple requisitos? [Pruebas] [Explicación]
-
-###Tarea 2, ¿qué comportamientos no previstos detectas? [Pruebas] [Explicación]
-
-###Tarea 3, ¿Cómo adaptarías tu solución? [Explicación]
+      ✅ Conclusión:
+          Visualizar esta información ayudaría a optimizar el centro médico, mejorando la asignación de médicos y tiempos de atención.  
 
 
