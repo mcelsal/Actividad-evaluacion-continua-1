@@ -73,7 +73,7 @@
     El enfoque alternativo que planteo consiste en la asignación de recursos, tales como médicos y equipos de diagnóstico, mediante el uso de **colas de prioridad**. 
     En lugar de utilizar la llegada del paciente como criterio único para asignar médicos y equipos, los pacientes pidrían ser atendidos en función de su **prioridad médica**, y en segundo lugar por su **tiempo de             llegada**. Esto garantizaría que los pacientes más urgentes fuesen atendidos primero, sin tener que esperar a que se libere un médico o un equipo de diagnóstico disponible.
 
-    - Cambios Propuestos y Esquema de Funcionamiento:
+    ✅- Cambios Propuestos y Esquema de Funcionamiento:
 
         1. **Uso de Colas de Prioridad**:
            En lugar de gestionar manualmente las prioridades de los pacientes dentro de una lista y asignar recursos de manera secuencial, podríamos usar un sistema de colas prioritarias para gestionar los pacientes en               espera, que permiten que los pacientes con mayor prioridad sean atendidos antes que los de menor prioridad sin necesidad de ordenar constantemente la lista de pacientes. 
@@ -90,7 +90,7 @@
         4. **Escalabilidad**:
            La solución estará diseñada para escalar fácilmente, permitiendo añadir más médicos y equipos de diagnóstico sin necesidad de modificar la lógica central del sistema.
 
-    - Beneficios
+    ✅- Beneficios
 
         - **Atención Prioritaria**: Los pacientes más urgentes serán atendidos primero, sin que deban esperar a que otros pacientes sean atendidos según el orden de llegada.
         - **Simplicidad**: Usar una cola prioritaria puede simplificar la lógica de asignación de pacientes, ya que la cola se encarga de mantener a los pacientes en el orden correcto según su prioridad. No sería                    necesario realizar consultas adicionales a la lista de pacientes para seleccionar al paciente con mayor prioridad.
@@ -100,7 +100,7 @@
         - **Mayor control sobre el proceso**: Este modelo permite simular escenarios más complejos y agregar reglas adicionales para gestionar el flujo de pacientes de manera aún más eficiente (por ejemplo, priorización 
           de pacientes por múltiples criterios, eventos inesperados, etc.).
      
-    - Implementación
+    ✅- Implementación
 
         Para implementar esta solución, se necesitarían cambios en el código para introducir las **colas de prioridad**. A continuación, se presentan algunos fragmentos clave de código que ilustran cómo se podría                  implementar esta mejora:
 
@@ -116,8 +116,10 @@
         
             Los pacientes cambiarán de estado según el progreso de su atención, y el sistema los mantendrá informados de su estado sin necesidad de esperar innecesariamente.     
         
-        Conclusión
-        La implementación de un sistema de colas de prioridad para gestionar la atención de los pacientes por urgencia podrían optimizar o simplificar el sistema dependiendo de los objetivos y requerimientos del centro            médico, asegurando que los pacientes más críticos reciban atención primero. Además, optimiza el uso de los recursos médicos y de diagnóstico, lo que mejora la capacidad de respuesta del sistema ante situaciones de         alta demanda.
+      📌- Conclusión
+         La implementación de un sistema de colas de prioridad para gestionar la atención de los pacientes por urgencia podrían optimizar o simplificar el sistema dependiendo de los objetivos y requerimientos del centro            médico, asegurando que los pacientes más críticos reciban atención primero. Además, optimiza el uso de los recursos médicos y de diagnóstico, lo que mejora la capacidad de respuesta del sistema ante situaciones 
+         de alta demanda.
 
 
 
+           
